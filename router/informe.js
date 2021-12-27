@@ -2,13 +2,13 @@ const express=require('express')
 const router=express.Router()
 
 router.get('/',(req,res)=>{
-    res.render('report.ejs',{data:'Envío de datos a report.ejs'})
+    res.render('informes/index.ejs',{data:'Envío de datos a report.ejs'})
 })
 
 router.post('/crear',(req,res)=>{
     const data=Object.assign({},req.body)
     console.log(data)
-    res.render('makeReport.ejs',{dbuscar:data})
+    res.render('informes/crear.ejs',{dbuscar:data})
 })
 
 
