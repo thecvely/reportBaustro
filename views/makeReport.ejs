@@ -1,4 +1,4 @@
-<%- include('templates/header.ejs',{titulo:'Informe Técnico'})  %> 
+<%- include('templates/header.ejs',{titulo:dbuscar.equipo})  %> 
    
     
 
@@ -16,7 +16,8 @@
               <thead>
                 <tr>
                   <td colspan="5"><div class="text-center">
-                    <h2 class="text-center">Elaborar Informe</h2>
+                    <h2 class="text-center">Crear Informe Técnico</h2>
+                    <h4 class="text-center"><%= `${dbuscar.tipo}: ${dbuscar.valor}` %> </h4>
                   </div>
                 </td>
                 </tr>
@@ -31,7 +32,7 @@
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td>
-                    <p>Usuario</p>
+                    <label>Usuario</label>
                 </td>
                 <td class="text-center">
                   <input type="text" class="form-control" aria-label="Text input with dropdown button" name="Usuario" placeholder="Custodio del equipo">    

@@ -1,9 +1,13 @@
 const express=require('express')
+const bodyP=require('body-parser')
 const app=express()
 const port=8000
 
-app.use(express.static(`${__dirname}/public`))
+//3.1 Peticiones Post
+app.use(bodyP.urlencoded({extended:false}))
+app.use(bodyP.json())
 //1.- Rutas estáticas
+app.use(express.static(`${__dirname}/public`))
 
 //2.- Vistas dinámicas
 app.set('view engine','ejs')
@@ -18,5 +22,5 @@ app.use((req,res,next)=>{
 })
 //5.- Listener
 app.listen(port,()=>{
-    console.log("Servidor Baustro")
+    console.log(`Servidor Baustro en puerto: ${port}`)
 })
