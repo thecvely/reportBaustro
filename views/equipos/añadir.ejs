@@ -1,0 +1,114 @@
+<%- include ('../templates/header.ejs', {titulo:'Añadir Equipos'})  %> 
+
+<div class="container-fluid"> <br><br><br><br><br></div>
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+        <form action="informe/crear" method="GET">
+          
+          <table class="table table-borderless table-primary">
+            <thead>
+              <tr>
+                <td colspan="4"><div class="text-center">
+                  <h2 class="text-center">Añadir Nuevo Registro</h2>
+                 
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <td>
+                <div class="d-grid gap-5">
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Procesador</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Monitor</button>
+                </div>
+              </td>
+              <td>
+                <div class="d-grid gap-5">
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Teléfono</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Teclado</button>
+                </div>
+              </td>
+              <td>
+                <div class="d-grid gap-5">
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Mouse</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Disco</button>
+                </div>
+              </td>
+              <td>
+                <div class="d-grid gap-5">
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Memoria</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Licencia</button>
+                </div>
+              </td>
+              
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5" class="text-center">
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+
+  <div class="modal-dialog modal-xl"> </div>
+
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="table text-center">
+    <img src="/images/logo.png" class="img-fluid">
+  </div>
+  
+
+
+<script>
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+    })
+
+</script>
+
+
+
+
+<%- include ('../templates/footer.ejs')  %>

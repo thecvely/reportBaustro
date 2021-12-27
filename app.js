@@ -15,6 +15,7 @@ app.set('views',`${__dirname}/views`)
 
 //3.- Ruteo
 app.use('/informe',require('./router/informe.js'))
+app.use('/equipos', require('./router/equipos.js'))
 
 //4.- Estados
 app.use((req,res,next)=>{
