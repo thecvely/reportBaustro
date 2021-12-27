@@ -10,7 +10,7 @@ app.set('view engine','ejs')
 app.set('views',`${__dirname}/views`)
 
 //3.- Ruteo
-app.use('/informe',require('./router/report.js'))
+app.use('/informe',require('./router/informe.js'))
 
 //4.- Estados
 app.use((req,res,next)=>{
