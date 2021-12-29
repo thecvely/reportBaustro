@@ -15,6 +15,7 @@ Systema varchar(25) not null,
 OS_Arch varchar(7) not null,
 OS_Version varchar(4) not null,
 Puerto varchar(10),
+Oficina varchar(10) not null,
 Estado varchar(10) not null,
 PRIMARY KEY (Codigo)
 );

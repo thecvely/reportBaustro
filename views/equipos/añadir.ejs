@@ -7,46 +7,38 @@
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
-
-        <form action="informe/crear" method="GET">
-          
           <table class="table table-borderless table-primary">
             <thead>
               <tr>
-                <td colspan="4"><div class="text-center">
+                <td colspan="4">
                   <h2 class="text-center">Añadir Nuevo Registro</h2>
-                 
-                </div>
-              </td>
-              </tr>
-              <tr>
-                <td colspan="4"></td>
+                </td>
               </tr>
             </thead>
             <tbody>
               <tr>
               <td>
                 <div class="d-grid gap-5">
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Procesador</button>
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Monitor</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('A')">Procesador</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('B')">Monitor</button>
                 </div>
               </td>
               <td>
                 <div class="d-grid gap-5">
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Teléfono</button>
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Teclado</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal"onclick="controlModal('G')">Teléfono</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal"onclick="controlModal('F')">Teclado</button>
                 </div>
               </td>
               <td>
                 <div class="d-grid gap-5">
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Mouse</button>
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Disco</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('E')">Mouse</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('C')">Disco</button>
                 </div>
               </td>
               <td>
                 <div class="d-grid gap-5">
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Memoria</button>
-                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Licencia</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('D')">Memoria</button>
+                    <button type="button" class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#varModal" onclick="controlModal('H')">Licencia</button>
                 </div>
               </td>
               
@@ -59,56 +51,398 @@
               </tr>
             </tfoot>
           </table>
-        </form>
+        
         </div>
       </div>
     </div>
     <div class="col-sm-2">
     </div>
-  </div>
-
-  <div class="modal-dialog modal-xl"> </div>
+</div>
 
   
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-
   <div class="table text-center">
     <img src="/images/logo.png" class="img-fluid">
   </div>
   
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="varModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <form action="#" method="GET">
+        <div class="modal-header">
+          <h5 class="modal-title" id="md_title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body" id="md_tb">
+          <table class="table table-borderless table-primary" id="myTable">
+            <tbody>
+            
+              <tr id="tb_f0" >
+              </tr>
+            
+              <tr id="tb_f1">
+              </tr>
+
+              <tr id="tb_f2">
+              </tr>
+            
+              <tr id="tb_f3">
+              </tr>
+            
+              <tr id="tb_f4">
+              </tr>
+            
+              <tr id="tb_f5">
+              </tr>
+            
+              <tr id="tb_f6">
+              </tr>
+            
+              <tr id="tb_f7">
+              </tr>
+            
+            </tbody>
+          </table>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  
 
 
 <script>
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
 
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
-    })
+function controlModal(tipo){
+
+let cell_i_p0=` <div class="form-floating mb-2">
+              <input type="email" class="form-control" id="`
+              
+let cell_i_p1=`" name="`
+
+let cell_i_p2=`" placeholder="">
+              <label for="`
+let cell_i_p3=`">`
+let cell_i_pf=`</label>
+            </div>`
+
+let cell_s_st=`<div class="form-floating mb-2">
+                  <select class="form-select" aria-label="Default select example" name="status">
+                    <option selected>Estado</option>
+                    <option>Operativo</option>
+                    <option>Averiado</option>
+                    <option>Obsoleto</option>
+                  </select>
+                </div>`
+
+let cell_bt_sr=`  <div class="d-grid gap-2">
+                    <div class="form-floating mb-2">
+                      <button type="button" class="btn btn-primary" onclick="controlModal('I')">Buscar Equipo</button>
+                    </div>                        
+                  </div>`
+
+let cell_file=`   <div class="d-grid gap-2">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Respaldo</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>                        
+                  </div>`
+            
+
+let label={}
+let in0c2=''
+let in2c0=''
+let in2c1=''
+let in2c2=''
+let filas={f0:'HOla Mundoi'}
+let equipo=''
+let flag=0
+switch(tipo){
+  case 'A': //procesador
+    equipo='Procesador'
+    label.in0c0='Código'
+    label.in1c0='IP'
+    label.in0c1='Usuario'
+    label.in1c1='Hostname'
+    label.in0c2='Marca'
+    label.in1c2='Modelo'
+    label.in2c1='MAC'
+    in0c2=` ${cell_i_p0}in0c2${cell_i_p1}in0c2${cell_i_p2}in0c2${cell_i_p3}${label.in0c2}${cell_i_pf}`
+    in1c2=` ${cell_i_p0}in1c2${cell_i_p1}in1c2${cell_i_p2}in1c2${cell_i_p3}${label.in1c2}${cell_i_pf}`
+    in2c1=` ${cell_i_p0}in2c1${cell_i_p1}in2c1${cell_i_p2}in1c1${cell_i_p3}${label.in2c1}${cell_i_pf}`
+
+    filas.f2=`<th colspan="3"><p>Mainboard</p> </th>`,
+    filas.f3=`<td>
+            <div class="d-grid gap-2">
+              ${cell_i_p0}m_serial${cell_i_p1}m_serial${cell_i_p2}m_serial${cell_i_p3}Serial${cell_i_pf}
+            </div> 
+          </td>
+          <td>
+            <div class="d-grid gap-2">  
+            ${cell_i_p0}m_model${cell_i_p1}m_model${cell_i_p2}m_model${cell_i_p3}Modelo${cell_i_pf}
+            </div> 
+          </td>
+          <td>
+            <div class="d-grid gap-2">
+              ${cell_i_p0}m_marca${cell_i_p1}m_marca${cell_i_p2}m_marca${cell_i_p3}Marca${cell_i_pf}
+            </div>
+          </td>`,
+    filas.f4=`<th colspan="3"><p>Sistema</p> </th>`,
+    filas.f5=`<td>
+              <div class="d-grid gap-2">
+                ${cell_i_p0}so${cell_i_p1}so${cell_i_p2}so${cell_i_p3}Sistema Operativo${cell_i_pf}
+              </div> 
+            </td>
+            <td>  
+                <div class="form-floating mb-2">
+                  <select class="form-select" aria-label="Default select example" name="so_arch">
+                    <option selected>Arquitectura</option>
+                    <option>32 bits</option>
+                    <option>64 bits</option>
+                  </select>
+                </div>
+            </td>
+            <td>
+              <div class="d-grid gap-2">
+                ${cell_i_p0}so_ver${cell_i_p1}so_ver${cell_i_p2}so_ver${cell_i_p3}Versión${cell_i_pf}
+              </div>
+            </td>`,
+
+    filas.f6=`<th colspan="3"><p>Ubicación y Estado</p> </th>`,
+    filas.f7=`<td>
+              <div class="d-grid gap-2">
+                <div class="form-floating mb-2">
+                  <select class="form-select" aria-label="Default select example" name="oficina">
+                    <option selected>Oficina</option>
+                    <option>Riobamba</option>
+                    <option>Latacunga</option>
+                    <option>Puyo</option>
+                    <option>Tena</option>
+                    <option>Ambato</option>
+                    <option>Atahualpa</option>
+                    <option>Baños</option>
+                    <option>Ficoa</option>
+                    <option>Coca</option>
+                  </select>
+                </div>
+              </div> 
+            </td>
+            <td>  
+              <div class="d-grid gap-2">
+                ${cell_i_p0}port${cell_i_p1}port${cell_i_p2}port${cell_i_p3}Puerto${cell_i_pf}
+              </div>
+            </td>
+            <td>
+              ${cell_s_st}
+            </td>`  
+      break;
+  case 'B': //Monitor
+  equipo='Monitor'
+  flag=1
+  break;
+  case 'C': //Discos
+  equipo='Discos'
+  label.in0c0='Serial'
+  label.in1c0='Modelo'
+  label.in0c1='Capacidad'
+  label.in1c1='Equipo Asociado'
+  label.in0c2='Estado'
+  label.in1c2=''
+  in0c2=` ${cell_i_p0}in0c2${cell_i_p1}in0c2${cell_i_p2}in0c2${cell_i_p3}${label.in0c2}${cell_i_pf}`
+  in1c2=''
+  in2c1=`${cell_bt_sr}`
+  filas.f2=filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+  break;
+  
+  case 'D': // Memorias
+  equipo='Memorias'
+  label.in0c0='Serial'
+  label.in1c0='Modelo'
+  label.in0c1='Capacidad'
+  label.in1c1='Marca'
+  label.in0c2='Estado'
+  label.in1c2='Velocidad'
+  label.in2c0='Equipo Asociado'
+  in0c2=` ${cell_i_p0}in0c2${cell_i_p1}in0c2${cell_i_p2}in0c2${cell_i_p3}${label.in0c2}${cell_i_pf}`
+  in1c2=` ${cell_i_p0}in1c2${cell_i_p1}in1c2${cell_i_p2}in1c2${cell_i_p3}${label.in1c2}${cell_i_pf}`
+  in2c0=` ${cell_i_p0}in2c0${cell_i_p1}in2c0${cell_i_p2}in2c0${cell_i_p3}${label.in2c0}${cell_i_pf}`
+  in2c1=` ${cell_bt_sr}`
+  filas.f2=filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+  break;
+  case 'E'://Mouses
+  equipo='Ratón'
+  flag=1
+  break;
+  case 'F'://Teclados
+  equipo='Teclado'
+  flag=1
+  break;
+  case 'G'://Teléfonos
+  equipo='Teléfono'
+  label.in0c0='Código'
+  label.in1c0='Serial'
+  label.in0c1='Marca'
+  label.in1c1='Modelo'
+  label.in0c2='Estado'
+  label.in1c2='Equipo Asociado'
+  label.in2c0='MAC'
+  label.in2c1='IP'
+  in0c2=`${cell_s_st}`
+  in1c2=`${cell_i_p0}in1c2${cell_i_p1}in1c2${cell_i_p2}in1c2${cell_i_p3}${label.in1c2}${cell_i_pf}`              
+  in2c0=`${cell_i_p0}in2c0${cell_i_p1}in2c0${cell_i_p2}in2c0${cell_i_p3}${label.in2c0}${cell_i_pf}`
+  in2c1=`${cell_i_p0}in2c1${cell_i_p1}in2c1${cell_i_p2}in2c1${cell_i_p3}${label.in2c1}${cell_i_pf}`
+  in2c2=`${cell_bt_sr}`
+  filas.f2=filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+  break;
+  case 'H'://Licencias
+  equipo='Licencia'
+  label.in0c0='Valor'
+  label.in1c0='Programa'
+  label.in0c1='Tipo'
+  label.in1c1='Fecha'
+  label.in0c2='Estado'
+  label.in1c2='Equipo Asociado'
+  label.in2c0='Respaldo'
+  in0c2=`${cell_s_st}`
+  in1c2=` ${cell_i_p0}in1c2${cell_i_p1}in1c2${cell_i_p2}in1c2${cell_i_p3}${label.in1c2}${cell_i_pf}`              
+  in2c0=`${cell_file}`
+  in2c2=`${cell_bt_sr}`
+  filas.f2=filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+  break;
+  case 'I':
+  equipo='Buscar CPU'
+  filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+  filas.f2=`<td>
+              <div class="d-grid gap-2">
+                <div class="form-floating mb-2">
+                    <select class="form-select" aria-label="Default select example" name="status">
+                      <option selected>Buscar</option>
+                      <option>IP</option>
+                      <option>BA</option>
+                      <option>Código</option>
+                    </select>
+                </div>  
+              </div>
+            </td>
+            <td>
+              <div class="d-grid gap-2">
+                ${cell_i_p0}val_s${cell_i_p1}val_s${cell_i_p2}val_s${cell_i_p3}Ingrese Valor${cell_i_pf}  
+              </div>
+            </td>
+            <td>
+              <div class="d-grid gap-2">
+                    <div class="form-floating mb-2">
+                      <button type="submit" class="btn btn-primary" >Buscar Registro</button>
+                    </div>                        
+              </div>
+            </td>
+            `
+  flag=2;
+  break;
+  default:
+  break;
+}
+
+if(flag==1){
+  label.in0c0='Código'
+  label.in1c0='Serial'
+  label.in0c1='Marca'
+  label.in1c1='Modelo'
+  label.in0c2='Estado'
+  label.in1c2='Equipo Asociado'
+  in0c2=`${cell_s_st}`
+  in1c2=` ${cell_i_p0}in1c2${cell_i_p1}in1c2${cell_i_p2}in1c2${cell_i_p3}${label.in1c2}${cell_i_pf}`              
+  
+  in2c2=`${cell_bt_sr}`
+
+  filas.f2=filas.f3=filas.f4=filas.f5=filas.f6=filas.f7=''
+}
+
+
+filas.f0=`<th colspan="3">
+                <div class="d-grid gap-2">
+                <p>${equipo}</p> 
+                <input type="hidden" name='equipo' value="${equipo}">
+                </div>
+            </th>`
+
+
+filas.f1=`<td>
+        <div class="d-grid gap-2">
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="in0c0" name="in0c0" placeholder="">
+            <label for="in0c0">${label.in0c0}</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="in1c0" name='in1c0' placeholder="">
+            <label for="in1c0">${label.in1c0}</label>
+          </div>
+          ${in2c0}
+        </div>
+      </td>
+      <td>
+        <div class="d-grid gap-2">
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="in0c1" name="in0c1" placeholder="">
+            <label for="in0c1">${label.in0c1}</label>
+          </div>  
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="in1c1" name="in1c1" placeholder="">
+            <label for="floatingInput">${label.in1c1}</label>
+          </div>
+          ${in2c1}
+        </div>
+      </td>
+      <td>
+        <div class="d-grid gap-2">
+          ${in0c2}
+          ${in1c2}
+          ${in2c2}                        
+        </div>
+      </td>`
+      if(flag==2){
+        filas.f1=''
+      }
+    fnGraph(filas, equipo)
+
+    }
+
+    function fnGraph(filas,equipo){
+      
+      document.getElementById('md_title').innerHTML=`Añadir Nuevo Registro [${equipo}]`
+      document.getElementById('tb_f0').innerHTML=filas.f0
+      document.getElementById('tb_f1').innerHTML=filas.f1
+      document.getElementById('tb_f2').innerHTML=filas.f2
+      document.getElementById('tb_f3').innerHTML=filas.f3
+      document.getElementById('tb_f4').innerHTML=filas.f4
+      document.getElementById('tb_f5').innerHTML=filas.f5
+      document.getElementById('tb_f6').innerHTML=filas.f6
+      document.getElementById('tb_f7').innerHTML=filas.f7     
+    }
+
+    
+
+    function fnSearch(){
+      let contenido=` `
+
+          document.getElementById('md_title').innerHTML='Buscar Equipo Asociado'
+          document.getElementById('md_tb').innerHTML=contenido
+
+    }
+
 
 </script>
-
-
 
 
 <%- include ('../templates/footer.ejs')  %>
