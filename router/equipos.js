@@ -7,12 +7,19 @@ router.get('/',(req, res)=>{
 res.render('equipos/añadir.ejs')
 })
 
+
 router.post('/', (req,res)=>{
 
-    const qry= pool.query(`SELECT * FROM Procesadores`,(err,result)=>{
+
+    pool.query(`SELECT * FROM Procesadores`,(err,result)=>{
+        const datos=Object.assign({},result[0])
         result.forEach(element => {
+            
             console.log(element)
+
         });
+        console.log(`DATOS: ${datos.IP}`)
+        
     })
 
     const data=Object.assign({},req.body)

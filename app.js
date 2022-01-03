@@ -2,7 +2,7 @@ const express=require('express')
 const bodyP=require('body-parser')
 const app=express()
 const port=8000
-const mysql=require('mysql')
+//const mysql=require('mysql')
 
 
 
