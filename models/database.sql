@@ -92,3 +92,9 @@ CREATE TABLE Licencias(
     Procesador varchar(20),
     CONSTRAINT id_cpul FOREIGN KEY (Procesador) REFERENCES Procesadores(Codigo)
 );
+
+;QUERYS
+Isertar en Procesadores
+
+INSERT INTO Procesadores (Codigo, IP, Hostname, Usuario, MAC, P_Model, P_Marca, M_Serial, M_Model, M_Marca, Systema, OS_Arch, OS_Version, Estado, Puerto, Oficina)
+VALUES('1800-1800-14007117459', '10.3.47.4', 'BA18000604', 'BA18000604', 'B8-97-5A-75-65-46','i7-7700 CPU @ 3.60GHz','Intel(R) Core(TM)','NONE','H110MHC','BIOSTAR Group','Microsoft Windows 10 Pro','64 bits','2009','OK','1/0/09','Ambato');
