@@ -1,6 +1,25 @@
 const mysql=require('mysql');
 const {promisify}=require('util')
 
+const mycpu={
+    Codigo: '',
+    IP: '',
+    Hostname: '',
+    Usuario: '',
+    MAC: '',
+    P_Model: '',
+    P_Marca: '',
+    M_Serial: '',
+    M_Model: '',
+    M_Marca: '',
+    Systema: '',
+    OS_Arch: '',
+    OS_Version: '',
+    Estado: '',
+    Puerto: '',
+    Oficina: ''
+}
+
 const database={
     host:'127.0.0.1',
     user:'root',
@@ -17,4 +36,4 @@ pool.getConnection((err, conecction)=>{
 
 
 promisify(pool.query)
-module.exports=pool
+module.exports={pool,mycpu}
